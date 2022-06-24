@@ -1,0 +1,113 @@
+.card{
+  box-shadow:-1px 7px 20px 14px rgb(0 0 0 / 5%);
+  border-radius: 10px;
+  max-height: 701px;
+  height: 701px;
+  max-width: 505px;
+  width: 100%;
+  padding: 35px;
+}
+
+.image-login{
+  background-image: url("../../../assets/image/image-login.png");
+  background-repeat: no-repeat;
+  height: 65vh;
+  width: 100%;
+}
+
+.welcome{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 38px;
+
+  color: #000000;
+  padding-bottom: 29px;
+}
+.sing-in{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 31px;
+  line-height: 46px;
+
+  color: #000000;
+}
+
+.lorem{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #000000;
+  padding-bottom: 48px;
+}
+.label{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height */
+
+
+  color: #000000;
+}
+.checked{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  /* identical to box height */
+
+
+  color: #000000;
+}
+.forgot a{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  /* identical to box height */
+
+
+  color: #4D4D4D;
+}
+
+.p-button-custom, .p-button{
+  background: #000000;
+  border: #000000;
+  border-radius: 6px;
+  padding: 17px;
+  &:hover, .p-button &:active, .p-button &:focus, .p-button{
+    background: lighten(#000000, 25%)!important;
+  }
+}
+.register a{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #7D7D7D;
+}
+
+::ng-deep .p-inputtext {
+  border-radius: 6px !important;
+}
+
+::ng-deep .p-button-label {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #FFFFFF;
+}

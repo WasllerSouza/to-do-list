@@ -1,8 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { AppConfig } from './domain/appconfig';
-import { AppConfigService } from './service/app-config.service';
-import { JsonService } from './service/jsonservice';
+import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Subscription} from 'rxjs';
+import {AppConfig} from './domain/appconfig';
+import {AppConfigService} from './service/app-config.service';
+import {JsonService} from './service/jsonservice';
 
 @Component({
   selector: 'app-root',
@@ -11,51 +11,24 @@ import { JsonService } from './service/jsonservice';
 })
 export class AppComponent implements OnInit, OnDestroy {
 
-  constructor(private configService: AppConfigService, private JsonService: JsonService) {}
+  constructor(private configService: AppConfigService) {
+  }
 
   config: AppConfig;
 
   public subscription: Subscription;
 
-  public announcement: any;
 
   public newsActive: boolean;
 
-  storageKey = "primeng";
-
   ngOnInit() {
-    this.config = {theme: 'lara-light-blue', dark: false} as AppConfig;
+    this.config = {theme: 'saga-blue', dark: false} as AppConfig;
 
-    this.subscription = this.configService.configUpdate$.subscribe( config => {
+    this.subscription = this.configService.configUpdate$.subscribe(config => {
       const linkElement = document.getElementById('theme-link');
       this.replaceLink(linkElement, config.theme);
       this.config = config;
     });
-
-    this.JsonService.getAnnouncement().then(data => {
-      this.announcement = data;
-
-      const itemString = localStorage.getItem(this.storageKey);
-      if (itemString) {
-        const item = JSON.parse(itemString);
-        if (item.hiddenNews && item.hiddenNews !== data.id) {
-          this.newsActive = true;
-        }
-      }
-      else {
-        this.newsActive = true;
-      }
-    });
-  }
-
-  onNewsClose() {
-    this.newsActive = false;
-
-    const item = {
-      hiddenNews: this.announcement.id
-    };
-
-    localStorage.setItem(this.storageKey, JSON.stringify(item));
   }
 
   replaceLink(linkElement, theme) {

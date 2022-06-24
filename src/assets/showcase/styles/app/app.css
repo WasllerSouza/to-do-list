@@ -399,8 +399,7 @@ pre[class*=language-] code .token.operator, pre[class*=language-] code .token.st
   flex-direction: column;
 }
 .layout-wrapper .layout-content {
-  padding-top: 70px;
-  margin-left: 250px;
+  padding: 20px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -1064,7 +1063,6 @@ pre[class*=language-] code .token.operator, pre[class*=language-] code .token.st
 
   .layout-wrapper .layout-content {
     margin-left: 0;
-    padding-top: 110px;
   }
   .layout-wrapper .layout-content .content-section.introduction {
     flex-direction: column;

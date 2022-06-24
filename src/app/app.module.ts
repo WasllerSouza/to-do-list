@@ -17,6 +17,11 @@ import {JsonService} from "./service/jsonservice";
 import { AppMainComponent } from './form/app-main/app-main.component';
 import { AppMenuComponent } from './form/app-menu/app-menu.component';
 import {AutoCompleteModule} from "primeng/autocomplete";
+import { AppLoginComponent } from './form/app-login/app-login.component';
+import {InputTextModule} from "primeng/inputtext";
+import {CheckboxModule} from "primeng/checkbox";
+import {RippleModule} from "primeng/ripple";
+import {AvatarModule} from "primeng/avatar";
 
 @NgModule({
   declarations: [
@@ -26,7 +31,8 @@ import {AutoCompleteModule} from "primeng/autocomplete";
     AppTopbarComponent,
     AppFooterComponent,
     AppMainComponent,
-    AppMenuComponent
+    AppMenuComponent,
+    AppLoginComponent
   ],
   imports: [
     FormsModule,
@@ -38,6 +44,10 @@ import {AutoCompleteModule} from "primeng/autocomplete";
     InputSwitchModule,
     TooltipModule,
     AutoCompleteModule,
+    InputTextModule,
+    CheckboxModule,
+    RippleModule,
+    AvatarModule,
 
   ],
   providers: [

@@ -90,6 +90,9 @@ export class AppTopbarComponent implements OnInit, OnDestroy {
     'tailwind-light': 'tailwind-light.png'
   };
 
+  userDTO = {
+    nome: 'Wasller Souza'
+  }
   versions?: any[];
 
   scrollListener: any;
@@ -99,8 +102,6 @@ export class AppTopbarComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.config = this.configService.config;
     this.subscription = this.configService.configUpdate$.subscribe((config: any) => this.config = config);
-    this.JsonService.getVersions().then(data => this.versions = data);
-
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.activeMenuIndex = null;
@@ -188,5 +189,11 @@ export class AppTopbarComponent implements OnInit, OnDestroy {
     }
 
     this.unbindScrollListener();
+  }
+
+  getInitials(value: string): string {
+    let name = value.split(" ")[0];
+    let lastName = value.split(" ")[1];
+    return (lastName !== undefined && lastName !== null && lastName !== '') ? name.charAt(0) + lastName.charAt(0) : value.split(" ")[0].charAt(0);
   }
 }
